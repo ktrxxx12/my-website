@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>病院ITインフラ延命・第三者保守 | プロフェッショナル・メディカル・サポート</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .bg-navy-900 { background-color: #0f172a; }
+        .text-medical { color: #0d9488; } /* エメラルドグリーン */
+        .bg-medical { background-color: #0d9488; }
+        .border-medical { border-color: #0d9488; }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 1200px;
+        }
+        .accordion-item.active .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .section-number {
+            font-family: serif;
+            opacity: 0.05;
+            font-size: 8rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900 leading-relaxed">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-navy-900 flex items-center justify-center text-white rounded-sm">
+                    <i data-lucide="shield-plus" size="18"></i>
+                </div>
+                <div class="border-l border-slate-300 pl-3">
+                    <span class="block text-lg font-black text-navy-900 tracking-tighter uppercase">Hospital <span class="text-medical font-bold">EOSL</span> Support</span>
+                    <span class="block text-[9px] font-bold text-slate-500 tracking-[0.2em] -mt-1 uppercase">Medical IT Infrastructure Rescue</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-10">
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-600">
+                    <a href="#services" class="hover:text-medical transition">Services</a>
+                    <a href="#device-list" class="hover:text-medical transition">Devices</a>
+                    <a href="#company" class="hover:text-medical transition">Corporate</a>
+                </div>
+                <a href="#contact" class="flex items-center gap-2 bg-navy-900 text-white px-6 py-3 text-xs font-black tracking-widest hover:bg-medical transition shadow-lg rounded-sm">
+                    CONTACT <i data-lucide="arrow-right" size="14"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-navy-900">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000" alt="Hospital IT" class="w-full h-full object-cover opacity-20 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/80 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl">
+                <div class="flex items-center gap-3 text-medical mb-8">
+                    <div class="h-[1px] w-12 bg-medical"></div>
+                    <span class="text-xs font-black tracking-[0.3em] uppercase">Professional Medical IT Rescue</span>
+                </div>
+                <h2 class="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+                    止まらない医療のために、<br>
+                    <span class="text-medical italic">「ITの延命」</span>という誠実を。
+                </h2>
+                <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl font-light leading-relaxed">
+                    メーカー保守が切れたからと、高額な刷新を急ぐ必要はありません。
+                    医療現場の特性を熟知した専門家が、貴院のIT資産を堅実に守り抜きます。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#contact" class="px-12 py-6 bg-medical text-white font-black text-lg hover:brightness-110 transition shadow-2xl flex items-center justify-center gap-3 rounded-sm">
+                        <i data-lucide="mail"></i> 無料見積もり・相談
+                    </a>
+                    <div class="flex items-center gap-6 px-6">
+                        <div class="text-white">
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Response Time</p>
+                            <p class="text-xl font-bold">最短当日訪問</p>
+                        </div>
+                        <div class="w-[1px] h-10 bg-white/20"></div>
+                        <div class="text-white">
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Availability</p>
+                            <p class="text-xl font-bold">24時間受付</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-32 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-20 items-center">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -top-10 -left-10 section-number">01</div>
+                    <h3 class="text-4xl font-bold mb-8 text-navy-900 leading-tight">
+                        「買い替え」以外の<br>最適な選択肢を。
+                    </h3>
+                    <div class="space-y-6 text-slate-600">
+                        <p>メーカーから「保守終了」を告げられた瞬間、現場は混乱に陥ります。しかし、まだ正常に動作する機器を、予算の都合で無理に刷新することは、病院経営にとって最善とは限りません。</p>
+                        <p class="font-bold text-navy-900 border-l-4 border-medical pl-4">
+                            私たちは第三者保守のプロフェッショナルとして、医療情報システムの安全性を維持しながら、ITコストの適正化を支援します。
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="aspect-square bg-slate-50 p-10 flex flex-col justify-center border border-slate-100 shadow-sm transition-all hover:border-medical">
+                        <i data-lucide="shield-off" class="text-rose-500 mb-6" size="40"></i>
+                        <p class="font-black text-navy-900 text-xl leading-tight">メーカー修理の<br>断絶を解消</p>
+                    </div>
+                    <div class="aspect-square bg-navy-900 p-10 flex flex-col justify-center text-white transition-all hover:bg-slate-800">
+                        <i data-lucide="bar-chart-3" class="text-medical mb-6" size="40"></i>
+                        <p class="font-black text-white text-xl leading-tight">ITコストの<br>劇的な圧縮</p>
+                    </div>
+                    <div class="aspect-square bg-navy-900 p-10 flex flex-col justify-center text-white transition-all hover:bg-slate-800">
+                        <i data-lucide="lock" class="text-medical mb-6" size="40"></i>
+                        <p class="font-black text-white text-xl leading-tight">厳格なデータ<br>機密保持</p>
+                    </div>
+                    <div class="aspect-square bg-slate-50 p-10 flex flex-col justify-center border border-slate-100 shadow-sm transition-all hover:border-medical">
+                        <i data-lucide="server" class="text-navy-900 mb-6" size="40"></i>
+                        <p class="font-black text-navy-900 text-xl leading-tight">旧OS環境の<br>長期維持</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section id="services" class="py-32 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-20">
+                <div>
+                    <span class="text-medical text-xs font-black tracking-[.4em] uppercase mb-4 block">Our Expertise</span>
+                    <h2 class="text-4xl font-bold text-navy-900 uppercase">Service Solutions</h2>
+                </div>
+                <div class="h-[2px] w-24 bg-slate-200 hidden md:block mb-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-1px bg-slate-200 border border-slate-200 shadow-2xl">
+                <!-- Service 1 -->
+                <div class="bg-white p-12 transition-all duration-300 hover:bg-navy-900 group">
+                    <span class="text-slate-200 text-6xl font-black mb-8 block transition-colors group-hover:text-white/10">01</span>
+                    <h4 class="text-2xl font-bold mb-6 text-navy-900 transition-colors group-hover:text-white">EOSL機器 保守・延命</h4>
+                    <p class="text-slate-500 mb-10 transition-colors group-hover:text-slate-300">メーカー修理が終了したサーバー、ネットワーク、端末を継続保守。独自ルートのパーツ在庫により、入替の猶予期間を確保します。</p>
+                    <div class="flex items-center gap-2 font-black text-navy-900 transition-colors group-hover:text-medical uppercase text-xs tracking-widest">
+                        Read More <i data-lucide="chevron-right" size="16"></i>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-12 transition-all duration-300 hover:bg-navy-900 group">
+                    <span class="text-slate-200 text-6xl font-black mb-8 block transition-colors group-hover:text-white/10">02</span>
+                    <h4 class="text-2xl font-bold mb-6 text-navy-900 transition-colors group-hover:text-white">中古機器・パーツ供給</h4>
+                    <p class="text-slate-500 mb-10 transition-colors group-hover:text-slate-300">世界中から厳格に検品したリユース品を調達。入手困難なスペアパーツの確保により、有事の際の即時復旧を可能にします。</p>
+                    <div class="flex items-center gap-2 font-black text-navy-900 transition-colors group-hover:text-medical uppercase text-xs tracking-widest">
+                        Read More <i data-lucide="chevron-right" size="16"></i>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-12 transition-all duration-300 hover:bg-navy-900 group">
+                    <span class="text-slate-200 text-6xl font-black mb-8 block transition-colors group-hover:text-white/10">03</span>
+                    <h4 class="text-2xl font-bold mb-6 text-navy-900 transition-colors group-hover:text-white">短期インフラレンタル</h4>
+                    <p class="text-slate-500 mb-10 transition-colors group-hover:text-slate-300">移行期間中の繋ぎや、臨時増床時の端末など、1ヶ月からのレンタルが可能。保守込みのプランで管理の手間も削減します。</p>
+                    <div class="flex items-center gap-2 font-black text-navy-900 transition-colors group-hover:text-medical uppercase text-xs tracking-widest">
+                        Read More <i data-lucide="chevron-right" size="16"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Device List -->
+    <section id="device-list" class="py-32 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-black text-navy-900 mb-6 uppercase tracking-tighter">Certified Devices</h2>
+                <div class="w-16 h-1 bg-medical mx-auto mb-6"></div>
+                <p class="text-slate-500 max-w-2xl mx-auto font-medium">下記の主要メーカーをはじめ、特殊な医療用端末もお調べいたします。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="accordion-item border border-slate-100 bg-slate-50 rounded-lg overflow-hidden transition-all duration-300 active">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-6">
+                            <span class="text-3xl font-black text-navy-900/10">HP</span>
+                            <span class="text-lg font-bold">HPE (HP Enterprise)</span>
+                        </div>
+                        <i data-lucide="plus" class="chevron-icon transition-transform text-navy-900"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-8 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-sm text-slate-600 border-t border-slate-100">
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> ProLiant DL360/DL380 (Gen8-Gen10)</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> ProLiant ML110/ML350</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> HPE MSA 2040/2050 Storage</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> Integrity rx2800 i4/i6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="accordion-item border border-slate-100 bg-slate-50 rounded-lg overflow-hidden transition-all duration-300">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-6">
+                            <span class="text-3xl font-black text-navy-900/10">DL</span>
+                            <span class="text-lg font-bold">Dell Technologies</span>
+                        </div>
+                        <i data-lucide="plus" class="chevron-icon transition-transform text-navy-900"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-8 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-sm text-slate-600 border-t border-slate-100">
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> PowerEdge R640 / R740</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> PowerVault ME4012 / ME4024</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> Dell EMC Unity シリーズ</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> PowerVault MD1200 / MD3200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="accordion-item border border-slate-100 bg-slate-50 rounded-lg overflow-hidden transition-all duration-300">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-6">
+                            <span class="text-3xl font-black text-navy-900/10">JP</span>
+                            <span class="text-lg font-bold">国内メーカー (NEC / 富士通)</span>
+                        </div>
+                        <i data-lucide="plus" class="chevron-icon transition-transform text-navy-900"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-8 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-sm text-slate-600 border-t border-slate-100">
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> NEC Express5800 シリーズ</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> NEC iStorage シリーズ</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> 富士通 PRIMERGY シリーズ</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> 富士通 ETERNUS シリーズ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="accordion-item border border-slate-100 bg-slate-50 rounded-lg overflow-hidden transition-all duration-300">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-6">
+                            <span class="text-3xl font-black text-navy-900/10">NW</span>
+                            <span class="text-lg font-bold">Cisco / Juniper / F5</span>
+                        </div>
+                        <i data-lucide="plus" class="chevron-icon transition-transform text-navy-900"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-8 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-sm text-slate-600 border-t border-slate-100">
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> Cisco Catalyst 2960/3750/3850</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> Cisco ASA シリーズ</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> Juniper EX/SRX シリーズ</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-medical rounded-full"></div> F5 BIG-IP シリーズ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-navy-900 p-10 text-white flex flex-col md:flex-row justify-between items-center gap-8 rounded-sm">
+                <div class="flex items-center gap-6">
+                    <div class="text-medical"><i data-lucide="help-circle" size="56"></i></div>
+                    <div>
+                        <h5 class="text-2xl font-black mb-1">お手元の機器が見つかりませんか？</h5>
+                        <p class="text-slate-400 text-sm">医療用ワークステーションや特殊ストレージも、型番をお伝えいただければ即座に在庫確認いたします。</p>
+                    </div>
+                </div>
+                <a href="#contact" class="px-10 py-5 bg-medical text-white font-black tracking-widest text-sm hover:bg-white hover:text-navy-900 transition-all uppercase rounded-sm border-2 border-medical">
+                    相談・在庫を確認する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-slate-50 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black text-navy-900 mb-4 uppercase tracking-tight">FREE ESTIMATE</h2>
+                    <p class="text-slate-500 font-medium tracking-wide">診断および概算見積もりは無料です。お気軽にご相談ください。</p>
+                </div>
+                
+                <form id="contactForm" class="bg-white p-12 shadow-2xl border border-slate-100 rounded-sm">
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">病院・貴社名 <span class="text-medical">*</span></label>
+                            <input type="text" required placeholder="病院名・法人名" class="w-full border-b-2 border-slate-100 py-3 focus:border-medical outline-none transition font-medium">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">部署名</label>
+                            <input type="text" placeholder="情報システム室など" class="w-full border-b-2 border-slate-100 py-3 focus:border-medical outline-none transition font-medium">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">お名前 <span class="text-medical">*</span></label>
+                            <input type="text" required placeholder="山田 太郎" class="w-full border-b-2 border-slate-100 py-3 focus:border-medical outline-none transition font-medium">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">メールアドレス <span class="text-medical">*</span></label>
+                            <input type="email" required placeholder="contact@example.jp" class="w-full border-b-2 border-slate-100 py-3 focus:border-medical outline-none transition font-medium">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8 space-y-4">
+                        <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">検討中の内容</label>
+                        <div class="flex flex-wrap gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="w-4 h-4 border-2 border-slate-200 checked:bg-medical transition rounded-none">
+                                <span class="text-sm font-bold text-slate-600 group-hover:text-medical transition">保守・延命</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="w-4 h-4 border-2 border-slate-200 checked:bg-medical transition rounded-none">
+                                <span class="text-sm font-bold text-slate-600 group-hover:text-medical transition">機器購入</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="w-4 h-4 border-2 border-slate-200 checked:bg-medical transition rounded-none">
+                                <span class="text-sm font-bold text-slate-600 group-hover:text-medical transition">レンタル</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-12 space-y-2">
+                        <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">対象機種・症状など <span class="text-medical">*</span></label>
+                        <textarea required rows="4" placeholder="型番や現在の稼働状況、ご相談内容をご記入ください。" class="w-full border-2 border-slate-100 p-4 focus:border-medical outline-none transition font-medium rounded-sm"></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="w-full md:w-auto px-16 py-6 bg-medical text-white font-black tracking-[0.2em] text-lg hover:brightness-110 transition shadow-xl rounded-sm">
+                            この内容でお問い合わせ
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="successMsg" class="hidden mt-8 bg-teal-50 text-teal-700 p-8 text-center border border-teal-100 rounded-sm">
+                    <i data-lucide="check-circle" class="mx-auto mb-4" size="32"></i>
+                    <p class="font-bold">送信完了いたしました。担当者より迅速にご連絡いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Information -->
+    <section id="company" class="py-24 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+                <div class="lg:w-1/3">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-[2px] bg-medical"></div>
+                        <h2 class="text-3xl font-black uppercase tracking-tight">Corporate</h2>
+                    </div>
+                    <p class="text-slate-500 leading-relaxed font-medium text-sm">
+                        持続可能な医療インフラの構築をミッションに、EOSL保守の専門家として全国の病院様を支援しています。
+                    </p>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="bg-slate-50 p-4 border border-slate-100">
+                            <p class="text-2xl font-black text-navy-900">500+</p>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Clinical Clients</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 border border-slate-100">
+                            <p class="text-2xl font-black text-navy-900">100k</p>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">In Stock Parts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-2/3 w-full">
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-12 border-b border-slate-100 pb-4">
+                            <div class="col-span-4 text-[10px] font-black text-slate-400 uppercase tracking-widest pt-1">Company</div>
+                            <div class="col-span-8 font-bold text-navy-900">株式会社メディカルITレスキュー</div>
+                        </div>
+                        <div class="grid grid-cols-12 border-b border-slate-100 pb-4">
+                            <div class="col-span-4 text-[10px] font-black text-slate-400 uppercase tracking-widest pt-1">Headquarters</div>
+                            <div class="col-span-8 font-medium text-slate-600">
+                                〒100-0000 東京都千代田区大手町X-X-X<br>
+                                <span class="text-xs opacity-60 mt-1 block">全国12箇所の拠点よりオンサイト保守を提供</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-12 border-b border-slate-100 pb-4">
+                            <div class="col-span-4 text-[10px] font-black text-slate-400 uppercase tracking-widest pt-1">Established</div>
+                            <div class="col-span-8 font-medium text-slate-600">2010年4月 <span class="mx-4 text-slate-200">|</span> 資本金 5,000万円</div>
+                        </div>
+                        <div class="grid grid-cols-12 border-b border-slate-100 pb-4">
+                            <div class="col-span-4 text-[10px] font-black text-slate-400 uppercase tracking-widest pt-1">Accreditation</div>
+                            <div class="col-span-8 flex flex-wrap gap-2 pt-1">
+                                <span class="text-[9px] font-black px-2 py-1 bg-slate-50 border border-slate-200 tracking-widest">ISO 27001</span>
+                                <span class="text-[9px] font-black px-2 py-1 bg-slate-50 border border-slate-200 tracking-widest">PRIVACY MARK</span>
+                                <span class="text-[9px] font-black px-2 py-1 bg-slate-50 border border-slate-200 tracking-widest">SECURITY GRADE A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-500 py-12 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <span class="font-black text-white tracking-widest text-sm uppercase">Medical IT <span class="text-medical">Rescue</span></span>
+                </div>
+                <div class="text-[10px] font-bold uppercase tracking-[0.2em]">
+                    &copy; 2024 Medical IT EOSL Support Group.
+                </div>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="text-[9px] tracking-widest opacity-40">
+                    医療情報システムの安全管理に関するガイドラインに準拠し、適切な情報管理を徹底しております。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Accordion Logic
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Toggle Icon Change
+            const icon = button.querySelector('.chevron-icon');
+            
+            if (!isActive) {
+                item.classList.add('active');
+                icon.setAttribute('data-lucide', 'minus');
+            } else {
+                item.classList.remove('active');
+                icon.setAttribute('data-lucide', 'plus');
+            }
+            lucide.createIcons();
+        }
+
+        // Simple Form Logic
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.classList.add('opacity-30', 'pointer-events-none');
+            setTimeout(() => {
+                this.classList.add('hidden');
+                document.getElementById('successMsg').classList.remove('hidden');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
