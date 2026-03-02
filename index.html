@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
@@ -28,11 +28,46 @@
     <div class="section">
         <p>デザインイメージ案です。</p>
     </div>
-    <ul>
-        <li><a href="ideas/A.html">【A案】ゲットイット風①</a></li>
-        <li><a href="ideas/B.html">【B案】ゲットイット風②</a></li>
-        <li><a href="ideas/C/index.html">【C案】Apple社①</a></li>
-        <li><a href="ideas/D/index.html">【D案】Apple社②</a></li>
+    <ul class="linklist">
+        <li><a href="ideas/A.html">
+            <figure><img src="ideas/thumbs/ideas_A.png" alt="" width="" height=""></figure>
+            【A案】ゲットイット風①</a></li>
+        <li><a href="ideas/B.html">
+            <figure><img src="ideas/thumbs/ideas_B.png" alt="" width="" height=""></figure>
+            【B案】ゲットイット風②</a></li>
+        <li><a href="ideas/C/index.html">
+            <figure><img src="ideas/thumbs/ideas_C.png" alt="" width="" height=""></figure>
+            【C案】Apple社①</a></li>
+        <li><a href="ideas/D/index.html">
+            <figure><img src="ideas/thumbs/ideas_D.png" alt="" width="" height=""></figure>
+            【D案】Apple社②</a></li>
     </ul>
+    <style>
+        .linklist {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        li {
+            width: 48%;
+            text-align: center;
+            margin: 3rem 0 0 0;
+        }
+        figure {
+            margin: 0;
+        }
+        figure img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media screen and (max-width:600px) {
+            li  {
+                width: 100%;
+            }
+        }
+    </style>
 </body>
 </html>
